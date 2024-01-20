@@ -140,6 +140,16 @@ local function opt_preset(opts)
   return preset
 end
 
+local function opt_order(opts)
+  local order
+  if opts == nil or opts["order"] == nil then
+    order = kind_presets.kind_order
+  else
+    order = opts["order"]
+  end
+  return order
+end
+
 function lspkind.init(opts)
   if opts ~= nil and opts["with_text"] ~= nil then
     vim.api.nvim_command("echoerr 'DEPRECATED replaced by mode option.'")
