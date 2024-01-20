@@ -155,6 +155,7 @@ function lspkind.init(opts)
     vim.api.nvim_command("echoerr 'DEPRECATED replaced by mode option.'")
   end
   local preset = opt_preset(opts)
+  local kind_order = opt_order(opts)
 
   local symbol_map = kind_presets[preset]
   lspkind.symbol_map = (opts and opts["symbol_map"] and vim.tbl_extend("force", symbol_map, opts["symbol_map"]))
